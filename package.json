@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "build": "cd supportai/frontend && npm install && npm run build"
+  },
   "dependencies": {
     "dotenv": "^17.4.2"
   }
 }
+

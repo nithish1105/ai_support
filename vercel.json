@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd supportai/frontend && npm install && npm run build",
+  "outputDirectory": "supportai/frontend/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
