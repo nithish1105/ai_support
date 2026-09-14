@@ -1,0 +1,36 @@
+# Environment variables / API Keys
+.env
+.env.*
+!.env.example
+*.env
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python Virtual Environments & Caches
+.venv/
+.venv*/
+**/venv/
+**/.venv/
+**/.venv*/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Databases & Media
+*.db
+*.sqlite
+*.sqlite3
+
+# Build Outputs
+dist/
+build/
+**/dist/
+
+# Logs & Temporary files
+*.log
+.DS_Store
+.vscode/
+.idea/

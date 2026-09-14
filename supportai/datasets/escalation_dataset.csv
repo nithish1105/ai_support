@@ -1,0 +1,12 @@
+customer_message,sentiment,failed_attempts,human_explicit_request,escalation_risk_level,escalate
+"How do I update my profile photo?",POSITIVE,0,0,LOW,0
+"Thanks for the reset link it worked",POSITIVE,0,0,LOW,0
+"I restarted the router like you suggested but it's still disconnected",NEGATIVE,1,0,MEDIUM,0
+"That troubleshooting step didn't fix it. What should I try next?",NEGATIVE,2,0,HIGH,0
+"I have already tried all 3 steps you gave me and none worked",NEGATIVE,3,0,CRITICAL,1
+"I want to speak to a real person please",NEUTRAL,0,1,CRITICAL,1
+"Connect me with a human agent right now",NEGATIVE,1,1,CRITICAL,1
+"Get me a manager immediately this is ridiculous",NEGATIVE,2,1,CRITICAL,1
+"I am very frustrated and need a supervisor to look into my account",NEGATIVE,1,1,CRITICAL,1
+"Is there someone I can talk to on the phone?",NEUTRAL,0,1,CRITICAL,1
+"My credit card was stolen and unauthorized charges are appearing",NEGATIVE,0,0,CRITICAL,1

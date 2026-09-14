@@ -1,0 +1,26 @@
+text,intent
+"My wifi isn't connecting to any devices",Internet Problem
+"The router lights are flashing red",Internet Problem
+"Internet connection drops every ten minutes",Internet Problem
+"I was double charged on my credit card this month",Billing Problem
+"Why is my monthly bill higher than usual?",Billing Problem
+"Need a copy of my recent billing invoice",Billing Problem
+"My payment was declined at checkout",Payment Problem
+"Money was deducted from bank but order is pending",Payment Problem
+"Can I pay using PayPal or bank transfer?",Payment Problem
+"I would like to request a full refund for my purchase",Refund Request
+"How long does it take for a refund to show on card?",Refund Request
+"Item was damaged and I want my money back",Refund Request
+"My account says locked due to multiple login attempts",Account Problem
+"Cannot sign in to my user profile",Account Problem
+"Need help unlocking my account urgently",Account Problem
+"Forgot my password and need a reset link",Password Reset
+"Password reset link expired before I clicked it",Password Reset
+"How do I change my account password?",Password Reset
+"Where is my package and what is tracking status?",Order Issue
+"Order has been in transit for two weeks without update",Order Issue
+"I want to cancel my active monthly subscription plan",Cancellation
+"Please cancel my account and stop all billing",Cancellation
+"This support is completely useless and unacceptable",Complaint
+"I demand to speak to a supervisor immediately",Complaint
+"The web dashboard is throwing error 500 on submit",Technical Issue

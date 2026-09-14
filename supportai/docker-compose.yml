@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: supportai-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: supportai
+      POSTGRES_PASSWORD: supportaipassword
+      POSTGRES_DB: supportai_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U supportai -d supportai_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: supportai-backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://supportai:supportaipassword@postgres:5432/supportai_db
+      JWT_SECRET: supersecretjwtkey2026supportai
+      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+      SENTIMENT_MODEL: distilbert-base-uncased-finetuned-sst-2-english
+      ZERO_SHOT_MODEL: facebook/bart-large-mnli
+      MAX_AI_ATTEMPTS: 3
+      FRONTEND_URL: http://localhost:3000
+      BACKEND_URL: http://localhost:8000
+      ENVIRONMENT: production
+      USE_AI_MODELS: "false"
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: supportai-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

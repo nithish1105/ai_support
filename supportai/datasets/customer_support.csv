@@ -1,0 +1,11 @@
+ticket_id,category,issue_title,customer_query,intent,sentiment,urgency,escalation_risk,resolution_channel
+SUP-DEMO-001,Internet Problem,Internet down completely,"My internet stopped working this morning. I already restarted the router twice.",Internet Problem,NEGATIVE,HIGH,CRITICAL,HUMAN
+SUP-DEMO-002,Password,Cannot reset account password,"I cannot reset my password. The reset email never arrives in my inbox.",Password Reset,NEUTRAL,MEDIUM,LOW,AI
+SUP-DEMO-003,Payment Problem,Payment deducted twice,"My payment was deducted twice for order ORD-9912. Please refund the duplicate charge.",Payment Problem,NEGATIVE,HIGH,HIGH,HUMAN
+SUP-DEMO-004,Refund,Refund for returned item,"I returned my package 5 days ago and haven't received my refund yet.",Refund Request,NEUTRAL,MEDIUM,MEDIUM,AI
+SUP-DEMO-005,Account Problem,Account locked out,"My account is locked out and I have an urgent delivery today.",Account Problem,NEGATIVE,CRITICAL,HIGH,HUMAN
+SUP-DEMO-006,Billing Problem,Unexpected surcharge on invoice,"Why is there a $15 extra fee on my monthly invoice for August?",Billing Problem,NEGATIVE,MEDIUM,MEDIUM,AI
+SUP-DEMO-007,Technical Issue,Application crashes on startup,"The desktop app closes immediately when I click launch on Windows 11.",Technical Issue,NEGATIVE,HIGH,MEDIUM,AI
+SUP-DEMO-008,Subscription,Cancel subscription renewal,"I want to cancel my annual subscription renewal before next week.",Cancellation,NEUTRAL,LOW,MEDIUM,AI
+SUP-DEMO-009,Delivery,Package marked delivered not received,"Tracking says delivered to front porch but nothing is there.",Delivery Problem,NEGATIVE,HIGH,HIGH,HUMAN
+SUP-DEMO-010,Complaint,Terrible service delay,"This is ridiculous. I've waited 3 days with no response. I want a manager.",Complaint,NEGATIVE,CRITICAL,CRITICAL,HUMAN
