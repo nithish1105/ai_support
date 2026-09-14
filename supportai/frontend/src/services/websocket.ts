@@ -17,14 +17,23 @@ class WebSocketService {
     this.ticketId = ticketId;
     this.token = localStorage.getItem('support_token');
 
-    const host =
-      typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-        ? `${window.location.hostname}:8000`
-        : window.location.host;
-
-    const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
     const tokenParam = this.token ? `?token=${encodeURIComponent(this.token)}` : '';
-    const wsUrl = `${protocol}://${host}/ws/tickets/${ticketId}${tokenParam}`;
+    const envWsUrl = import.meta.env.VITE_WS_URL;
+    let wsUrl: string;
+
+    if (envWsUrl) {
+      const base = envWsUrl.replace(/\/$/, '');
+      wsUrl = `${base}/ws/tickets/${ticketId}${tokenParam}`;
+    } else {
+      const host =
+        typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+          ? `${window.location.hostname}:8000`
+          : window.location.host;
+
+      const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+      wsUrl = `${protocol}://${host}/ws/tickets/${ticketId}${tokenParam}`;
+    }
+
 
     try {
       if (this.ws) {
